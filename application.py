@@ -20,7 +20,7 @@ def home():
 def get_channel_info():
     if request.method == 'POST':
         url = request.form['url']
-    api_key = "AIzaSyDbVke3REsYIKgozMWQGD3yNDonX7fJk90"
+    api_key = "********************************"
     try:
         video_id = url.split("=")[1]
     except Exception as e:
