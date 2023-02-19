@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video Details</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .container {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .published_on {
+            font-style: italic;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .channel_title {
+            font-style: italic;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            margin-bottom: 10px;
+        }
+
+        .comment_data {
+            margin-left: 10px;
+            list-style-type: none;
+            font-size: 1.2em;
+        }
+
+        .author_name {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="Title">{{ video_data["title"] }}</h1>
+        <p class="Published On">{{ video_data["published_on"] }}</p>
+        <p class="Channel title">{{ video_data["channel_title"] }}</p>
+        <p class="Description">{{ video_data["description"] }}</p>
+        <h3>Comments</h3>
+        <ul class="comment_data">
+            {% for comment in video_data["comment_data"] %}
+            <li>
+                <span class="Author Name">{{ comment.author_name }}:</span>
+                {{ comment.comment }}
+                <br>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
